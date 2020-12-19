@@ -285,7 +285,7 @@ fetch(`/api/elements${window.location.search}`, { headers: { 'Accept': 'applicat
     });
 
     // Get the Document List
-fetch(`/api//documents`, { headers: { 'Accept': 'application/json' } })
+fetch(`/api/documents`, { headers: { 'Accept': 'application/json' } })
     .then((resp) => resp.json())
     .then(async (json) => {
         console.log(json);
