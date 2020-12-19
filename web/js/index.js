@@ -283,3 +283,12 @@ fetch(`/api/elements${window.location.search}`, { headers: { 'Accept': 'applicat
     }).catch((err) => {
         displayError(`Error while requesting document elements: ${err}`);
     });
+
+    // Get the Document List
+fetch(`/api//documents`, { headers: { 'Accept': 'application/json' } })
+    .then((resp) => resp.json())
+    .then(async (json) => {
+        console.log(json);
+    }).catch((err) => {
+        displayError(`Error while requesting docuemnt list: ${err}`);
+});
