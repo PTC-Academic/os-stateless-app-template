@@ -23,6 +23,10 @@ apiRouter.get('/elements', (req, res) => {
 apiRouter.get('/documents', (req, res) => {
     forwardRequestToOnshape(`${onshapeApiUrl}/documents`, req, res);
 });
+
+apiRouter.get('/users/sessioninfo', (req, res) => {
+    forwardRequestToOnshape(`${onshapeApiUrl}/users/sessioninfo`, req, res);
+});
 /**
  * Get the Parts of the given Element in the current document/workspace.
  * 
