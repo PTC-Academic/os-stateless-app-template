@@ -298,6 +298,10 @@ fetch(`/api/documents`, { headers: { 'Accept': 'application/json' } })
     .then((resp) => resp.json())
     .then(async (json) => {
         console.log(json);
+        const child = document.createElement('name');
+        const title = document.createTextNode(json.firstName);
+        child.appendChild(title);
+        $elemSelector.appendChild(child);
     }).catch((err) => {
         displayError(`Error while requesting docuemnt list: ${err}`);
 });
