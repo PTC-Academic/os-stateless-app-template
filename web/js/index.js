@@ -301,7 +301,7 @@ fetch(`/api/documents`, { headers: { 'Accept': 'application/json' } })
         const child = document.createElement('name');
         const title = document.createTextNode(json.firstName);
         child.appendChild(title);
-        $elemSelector.appendChild(child);
+        document.body.appendChild(child);
     }).catch((err) => {
         displayError(`Error while requesting docuemnt list: ${err}`);
 });
