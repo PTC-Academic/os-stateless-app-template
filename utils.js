@@ -18,13 +18,7 @@ module.exports = {
             const contentType = resp.headers.get('Content-Type');
             res.status(resp.status).contentType(contentType).send(data);
         } catch (err) {
-            if(err.message.includes("Cannot read property")){
-                console.log("Attempting redirect");
-                res.redirect('/oauthSignin');
-            } else{
-                console.log("error is: ", err);
-                res.status(500).json({ error: err });
-            }
+            res.status(500).json({ error: err });
         }
     }
 }
