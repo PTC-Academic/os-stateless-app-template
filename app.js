@@ -74,10 +74,10 @@ app.get('/grantDenied', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'html', 'grantDenied.html'));
 })
 
-app.get('/', (req, res) => {
+app.get('/', passport.authenticate('onshape'), (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'html', 'index.html'));
 });
 
-app.use('/api', require('./api'));
+app.use('/api', passport.authenticate('onshape'), require('./api'));
 
 module.exports = app;
