@@ -19,7 +19,7 @@ module.exports = {
             res.status(resp.status).contentType(contentType).send(data);
         } catch (err) {
             console.log("error is: " + err);
-            console.log("response is: " + res);
+            console.log("response is: ", res);
             res.status(500).json({ error: err });
         }
     }
