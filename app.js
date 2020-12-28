@@ -78,6 +78,6 @@ app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'html', 'index.html'));
 });
 
-app.use('/api', passport.authenticate('onshape'), require('./api'));
+app.use('/api', require('./api'));
 
 module.exports = app;
