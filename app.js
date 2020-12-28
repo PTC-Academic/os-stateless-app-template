@@ -74,10 +74,10 @@ app.get('/grantDenied', (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'html', 'grantDenied.html'));
 })
 
-app.get('/', passport.authenticate('onshape'), (req, res) => {
+app.get('/', require('connect-ensure-login').ensureLoggedIn(), (req, res) => {
     res.sendFile(path.join(__dirname, 'public', 'html', 'index.html'));
 });
 
-app.use('/api', passport.authenticate('onshape'), require('./api'));
+app.use('/api', require('connect-ensure-login').ensureLoggedIn(), require('./api'));
 
 module.exports = app;
